@@ -12,6 +12,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const gameLinks = document.querySelectorAll('#game-container a');
-    gameLinks.forEach((link) => {
-        link.addEventListener('click', () => {
+    const gameButtons = document.querySelectorAll('#game-container
