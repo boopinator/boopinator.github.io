@@ -4,17 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f3f3f3;
+        }
+
+        #game-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+        }
+
+        .game-btn {
+            background-color: #555;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .game-section {
+            display: none;
+        }
+
+        .game-section iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .hidden-mobile {
+                display: none;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hidden-desktop {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="game-container">
-        <button data-game-url="https://h5cdn.github.io/s8/moto-x3m/" id="moto-x3m-btn">Moto X3M</button>
-        <button data-game-url="https://h5cdn.github.io/s/moto-x3m-winter/" id="moto-x3m-winter-btn">Moto X3M Winter</button>
-        <button data-game-url="https://h5cdn.github.io/s/moto-x3m-spooky-land/" id="moto-x3m-spooky-land-btn">Moto X3M Spooky Land</button>
-        <button data-game-url="https://h5cdn.github.io/s/moto-x3m-pool-party/" id="moto-x3m-pool-party-btn">Moto X3M Pool Party</button>
-        <button data-game-url="https://h5cdn.github.io/s77/drive-mad/" id="drive-mad-btn">Drive Mad</button>
-        <button data-game-url="https://h5cdn.github.io/s/basketball-legends/" id="basketball-legends-btn">Basketball Legends</button>
-        <button id="fullscreen-btn">Fullscreen</button>
+        <button class="game-btn" data-game-btn="moto-x3m">Moto X3M</button>
+        <button class="game-btn" data-game-btn="moto-x3m-winter">Moto X3M Winter</button>
+        <button class="game-btn" data-game-btn="moto-x3m-spooky-land">Moto X3M Spooky Land</button>
+        <button class="game-btn" data-game-btn="moto-x3m-pool-party">Moto X3M Pool Party</button>
+        <button class="game-btn" data-game-btn="drive-mad">Drive Mad</button>
+        <button class="game-btn" data-game-btn="basketball-legends">Basketball Legends</button>
     </div>
-    <iframe id="game-frame" src="" width="100%" height="100%" seamless></iframe>
-</body>
-</html>
+
+    <div id="moto-x3m" class="game-section">
+        <iframe src="https://h5cdn.github.io/s8/moto-x3m/" loading="lazy"></iframe>
+    </div>
+    <div id="moto-x3m-winter" class="game-section">
+        <iframe src="https://h5cdn.github.io/s/moto-x3m-winter/" loading="lazy"></iframe>
+    </div>
+    <div id="moto-x3m-spooky-land" class="game-section">
+        <iframe src="https://h5cdn.github.io/s/moto-x3m-spooky-land/" loading="lazy"></iframe>
+    </div>
+    <div id="moto-x3m-pool-party" class="game-section">
+        <iframe src="https://h5cdn.github.io/s/moto-x3m-pool-party/"
