@@ -6,8 +6,8 @@
     <title>Games Website</title>
     <style>
         iframe {
-            width: 100%;
-            height: 600px;
+            width: 400px;
+            height: 800px;
             border: none;
         }
     </style>
@@ -25,33 +25,45 @@
     </ul>
 
     <div id="moto-x3m">
-        <button id="fullscreen-button">Fullscreen</button>
+        <button onclick="goFullscreen(this.nextElementSibling)">Fullscreen</button>
         <iframe src="https://h5cdn.github.io/s8/moto-x3m"></iframe>
     </div>
 
     <div id="moto-x3m-winter">
-        <button id="fullscreen-button">Fullscreen</button>
+        <button onclick="goFullscreen(this.nextElementSibling)">Fullscreen</button>
         <iframe src="https://h5cdn.github.io/s/moto-x3m-winter"></iframe>
     </div>
 
     <div id="moto-x3m-spooky-land">
-        <button id="fullscreen-button">Fullscreen</button>
+        <button onclick="goFullscreen(this.nextElementSibling)">Fullscreen</button>
         <iframe src="https://h5cdn.github.io/s/moto-x3m-spooky-land"></iframe>
     </div>
 
     <div id="moto-x3m-pool-party">
-        <button id="fullscreen-button">Fullscreen</button>
+        <button onclick="goFullscreen(this.nextElementSibling)">Fullscreen</button>
         <iframe src="https://h5cdn.github.io/s/moto-x3m-pool-party"></iframe>
     </div>
 
     <div id="drive-mad">
-        <button id="fullscreen-button">Fullscreen</button>
+        <button onclick="goFullscreen(this.nextElementSibling)">Fullscreen</button>
         <iframe src="https://h5cdn.github.io/s77/drive-mad"></iframe>
     </div>
 
     <div id="basketball-legends">
-        <button id="fullscreen-button">Fullscreen</button>
+        <button onclick="goFullscreen(this.nextElementSibling)">Fullscreen</button>
         <iframe src="https://h5cdn.github.io/s/basketball-legends"></iframe>
     </div>
+
+    <script>
+        function goFullscreen(element) {
+            if (element.requestFullscreen) {
+                element.requestFullscreen();
+            } else if (element.webkitRequestFullscreen) {  // Safari
+                element.webkitRequestFullscreen();
+            } else if (element.msRequestFullscreen) {     // IE11
+                element.msRequestFullscreen();
+            }
+        }
+    </script>
 </body>
 </html>
